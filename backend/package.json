@@ -30,6 +30,7 @@
     "typescript": "^6.0.3"
   },
   "scripts": {
-    "dev": "ts-node-dev --respawn src/server.ts"
+    "dev": "ts-node-dev --respawn src/server.ts",
+    "start": "ts-node src/server.ts"
   }
 }

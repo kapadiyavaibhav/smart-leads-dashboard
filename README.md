@@ -123,7 +123,7 @@ JWT_SECRET=your_secret_key
 ### Clone repository
 
 ```bash
-git clone YOUR_GITHUB_LINK
+git clone (https://github.com/kapadiyavaibhav/smart-leads-dashboard)
 ```
 
 ```bash

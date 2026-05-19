@@ -7,7 +7,7 @@
 
     "strict": true,
 
-    "esModuleInterop": true,
+    "esModuleInterop": false,
     "allowSyntheticDefaultImports": true,
 
     "skipLibCheck": true,

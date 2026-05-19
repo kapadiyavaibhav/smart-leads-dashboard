@@ -2,6 +2,21 @@
 
 A full-stack MERN-based Lead Management CRM built with role-based authentication, lead tracking, filtering, pagination, and CSV export.
 
+---
+
+## Live Demo
+
+Frontend:  
+https://your-frontend-link.onrender.com
+
+Backend API:  
+https://smart-leads-dashboard-1-3aqs.onrender.com
+
+GitHub Repository:  
+https://github.com/kapadiyavaibhav/smart-leads-dashboard
+
+---
+
 ## Features
 
 ### Authentication
@@ -18,7 +33,7 @@ A full-stack MERN-based Lead Management CRM built with role-based authentication
 - Update Lead
 - Delete Lead
 - Lead Details Modal
-- Status Tracking:
+- Lead Status Tracking:
   - New
   - Contacted
   - Qualified
@@ -33,11 +48,11 @@ A full-stack MERN-based Lead Management CRM built with role-based authentication
 - Debounced Search
 
 ### Pagination
-- Backend pagination using:
+- Backend Pagination using:
   - skip()
   - limit()
-- Frontend page navigation
-- Page metadata support
+- Frontend Page Navigation
+- Page Metadata Support
 
 ### Additional Features
 - CSV Export
@@ -71,6 +86,7 @@ A full-stack MERN-based Lead Management CRM built with role-based authentication
 ### DevOps
 - Docker
 - Docker Compose
+- Render Deployment
 
 ---
 
@@ -81,12 +97,16 @@ smart-leads-dashboard/
 
 ├── backend/
 │   ├── src/
+│   │   ├── config/
 │   │   ├── controllers/
 │   │   ├── middleware/
 │   │   ├── models/
 │   │   ├── routes/
 │   │   ├── utils/
 │   │   └── server.ts
+│   │
+│   ├── Dockerfile
+│   └── package.json
 │
 ├── frontend/
 │   ├── src/
@@ -94,13 +114,21 @@ smart-leads-dashboard/
 │   │   ├── pages/
 │   │   ├── services/
 │   │   └── App.tsx
+│   │
+│   ├── Dockerfile
+│   └── package.json
 │
-└── docker-compose.yml
+├── docker-compose.yml
+├── README.md
+├── API_DOCUMENTATION.md
+└── .env.example
 ```
 
 ---
 
 ## Environment Variables
+
+### Backend (.env)
 
 Create:
 
@@ -112,15 +140,29 @@ Add:
 
 ```env
 PORT=5000
-MONGO_URI=your_mongodb_connection
-JWT_SECRET=your_secret_key
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret_key
+```
+
+### Frontend (.env)
+
+Create:
+
+```bash
+frontend/.env
+```
+
+Add:
+
+```env
+VITE_API_URL=https://smart-leads-dashboard-1-3aqs.onrender.com/api
 ```
 
 ---
 
-## Installation
+## Installation & Setup
 
-### Clone repository
+### Clone Repository
 
 ```bash
 git clone https://github.com/kapadiyavaibhav/smart-leads-dashboard
@@ -140,6 +182,12 @@ npm install
 npm run dev
 ```
 
+Backend runs on:
+
+```bash
+http://localhost:5000
+```
+
 ---
 
 ### Frontend Setup
@@ -150,9 +198,15 @@ npm install
 npm run dev
 ```
 
+Frontend runs on:
+
+```bash
+http://localhost:5173
+```
+
 ---
 
-## Run with Docker
+## Run using Docker
 
 ```bash
 docker compose up --build
@@ -166,34 +220,65 @@ docker compose up --build
 
 | Method | Endpoint | Description |
 |----------|----------|-------------|
-| POST | /auth/register | Register user |
-| POST | /auth/login | Login user |
+| POST | /api/auth/register | Register User |
+| POST | /api/auth/login | Login User |
+
+---
 
 ### Leads
 
 | Method | Endpoint | Description |
 |----------|----------|-------------|
-| GET | /leads | Get leads |
-| POST | /leads | Create lead |
-| GET | /leads/:id | Get single lead |
-| PUT | /leads/:id | Update lead |
-| DELETE | /leads/:id | Delete lead |
-| GET | /leads/export/csv | Export CSV |
+| GET | /api/leads | Get Leads |
+| POST | /api/leads | Create Lead |
+| GET | /api/leads/:id | Get Single Lead |
+| PUT | /api/leads/:id | Update Lead |
+| DELETE | /api/leads/:id | Delete Lead |
+| GET | /api/leads/export/csv | Export CSV |
 
 ---
 
-## Roles
+### Dashboard
+
+| Method | Endpoint | Description |
+|----------|----------|-------------|
+| GET | /api/dashboard | Dashboard Statistics |
+
+---
+
+## Roles & Permissions
 
 ### Admin
+
+Can:
+
 - View Leads
 - Create Leads
-- Edit Leads
+- Update Leads
 - Delete Leads
 
 ### Sales User
+
+Can:
+
 - View Leads
 - Create Leads
-- Edit Leads
+- Update Leads
+
+---
+
+## Assignment Notes
+
+This project was developed as part of a Full Stack Internship assignment and demonstrates:
+
+- Authentication & Authorization
+- Backend API Development
+- Database Integration
+- CRUD Operations
+- State Management
+- Lead Tracking System
+- Docker Containerization
+- Deployment using Render
 
 ---
 
@@ -203,9 +288,14 @@ docker compose up --build
 - Analytics Dashboard
 - Charts & Insights
 - Email Notifications
+- Activity Logs
+- Lead Assignment System
 
 ---
 
 ## Author
 
-Vaibhav Kapadiya
+**Vaibhav Kapadiya**
+
+GitHub:  
+https://github.com/kapadiyavaibhav

@@ -1,4 +1,4 @@
-import express from "express";
+import { Router } from "express";
 
 import {
 createLead,
@@ -14,8 +14,7 @@ import { authorizeRoles } from "../middleware/roleMiddleware";
 import { body } from "express-validator";
 import { validate } from "../middleware/validationMiddleware";
 
-const router=express.Router();
-
+const router = Router();
 router.post(
 "/",
 protect,

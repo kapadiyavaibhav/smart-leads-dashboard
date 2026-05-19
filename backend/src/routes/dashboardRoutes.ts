@@ -1,9 +1,8 @@
-import express from "express";
+import { Router } from "express";
 import { getDashboardStats } from "../controllers/dashboardController";
 import { protect } from "../middleware/authMiddleware";
 
-const router = express.Router();
-
+const router = Router();
 router.get("/",protect,getDashboardStats);
 
 export default router;
